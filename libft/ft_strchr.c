@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 14:47:49 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 12:00:58 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/02 10:29:07 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/02 12:01:29 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, unsigned int n)
+char	*ft_strchr(const char *str, int search_str)
 {
-	unsigned int	i;
-	unsigned int	o;
-	size_t			dest_len;
-	size_t			src_len;
+	int	i;
 
-	src_len = ft_strlen(src);
-	dest_len = ft_strlen(dest);
 	i = 0;
-	o = 0;
-	if (n == 0 || dest_len >= n - 1)
+	while (str[i] != (char)search_str && str[i])
 	{
-		if (dest_len >= n)
-			return (n + src_len);
-		return (src_len - dest_len);
-	}
-	while (dest[i] != '\0')
 		i++;
-	while (src[o] != '\0' && o < n - 1)
-	{
-		dest[i + o] = src[o];
-		++o;
 	}
-	dest[i + o] = '\0';
-	return (ft_strlen(dest));
+	if (str[i] == (char)search_str)
+	{
+		return (&str[i]);
+	}
+	else
+		return (NULL);
 }

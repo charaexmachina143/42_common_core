@@ -1,41 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 14:47:49 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 12:00:58 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/02 12:11:42 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/02 13:49:10 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, char *src, unsigned int n)
+char	*ft_strnstr(char *str, char *to_find, int n)
 {
-	unsigned int	i;
-	unsigned int	o;
-	size_t			dest_len;
-	size_t			src_len;
+	int	i;
+	int	c;
+	int	o;
 
-	src_len = ft_strlen(src);
-	dest_len = ft_strlen(dest);
-	i = 0;
 	o = 0;
-	if (n == 0 || dest_len >= n - 1)
+	c = 0;
+	i = 0;
+	while (str[i] && i < n)
 	{
-		if (dest_len >= n)
-			return (n + src_len);
-		return (src_len - dest_len);
-	}
-	while (dest[i] != '\0')
+		if (to_find[0] == '\0')
+			return (str);
+		while (str[i] == to_find[o])
+		{
+			i++;
+			o++;
+			if (to_find[o] == '\0')
+				return (&str[i - o]);
+		}
+		if (o != 0)
+			i--;
 		i++;
-	while (src[o] != '\0' && o < n - 1)
-	{
-		dest[i + o] = src[o];
-		++o;
+		o = 0;
 	}
-	dest[i + o] = '\0';
-	return (ft_strlen(dest));
+	return (0);
 }
