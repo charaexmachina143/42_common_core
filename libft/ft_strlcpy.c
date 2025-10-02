@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 13:47:01 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 10:14:17 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:15:41 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (i < n - 1 && src[i] != '\0')
