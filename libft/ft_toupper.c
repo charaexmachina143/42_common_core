@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:03:39 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 10:12:02 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:14:46 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char	*ft_toupper(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	while (str[i])
 	{
 		if (str[i] >= 'a' && str[i] <= 'z')

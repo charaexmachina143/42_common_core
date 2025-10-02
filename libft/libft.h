@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:23:55 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 10:12:37 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:14:21 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 # define LIBFT_H
 # include <stdlib.h>
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
