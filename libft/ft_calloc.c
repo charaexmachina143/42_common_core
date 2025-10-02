@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:19:17 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 13:49:52 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/02 13:53:54 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,14 @@ void	*ft_calloc(size_t num_elem, size_t size_elem)
 {
 	void	*array;
 
-	array = malloc(num_elem * size_elem);
+	if (num_elem == 0 || size_elem == 0)
+	{
+		array = malloc(0);
+		return (array);
+	}
 	if (num_elem * size_elem > 2147483647)
 		return (NULL);
+	array = malloc(num_elem * size_elem);
 	if (!array)
 		return (NULL);
 	ft_bzero(array, num_elem);
