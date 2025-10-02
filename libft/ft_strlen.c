@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:26:21 by doberste          #+#    #+#             */
-/*   Updated: 2025/09/30 11:28:40 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:12:42 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	size_t a;
+	size_t	a;
 
 	a = 0;
 	while (str[a] != '\0')
