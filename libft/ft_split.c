@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/04 10:22:28 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/04 18:59:39 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/04 18:33:57 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/04 18:59:26 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	**ft_split(char *s, char c)
 {
-	char	*new_str;
-	int		s1i;
-	int		s2i;
-	int		i;
-
-	s1i = 0;
-	s2i = 0;
-	i = 0;
-	new_str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!new_str)
-		return (NULL);
-	while (s1[s1i])
-	{
-		new_str[i] = s1[s1i];
-		s1i++;
-		i++;
-	}
-	while (s2[s2i])
-	{
-		new_str[i] = s2[s2i];
-		s2i++;
-		i++;
-	}
-	new_str[i] = 0;
-	return (new_str);
 }
+static int	count_words(const char *str, char delim)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i])
+	{
+		while (str[i] == delim)
+		{
+			i++;
+		}
+		if (str[i])
+		{
+			count++;
+			while (str[i] && str[i] != delim)
+			{
+				i++;
+			}
+		}
+	}
+	return (count);
+}
+static char	*alloc_words(char *s, char c)
