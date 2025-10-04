@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:23:55 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 13:48:59 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/04 12:13:58 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ char	*ft_strnstr(char *str, char *to_find, int n);
 int		ft_atoi(char *str);
 char	*ft_strdup(char *src);
 void	*ft_calloc(size_t num_elem, size_t size_elem);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
