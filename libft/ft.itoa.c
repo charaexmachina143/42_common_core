@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft.itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/06 16:59:49 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/07 01:32:04 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,25 @@
 
 int		count_dig(int n);
 char	*ft_itoa(int n);
+char *min_int_handle(char *result);
+
 
 char	*ft_itoa(int n)
 {
 	int		i;
 	char	*result;
-	int		temp;
-	int		is_neg;
 
-	is_neg = 0;
 	result = malloc(count_dig(n) + 1);
 	if (!result)
 		return (NULL);
+	if (n == -2147483648)
+	{
+		min_int_handle(result);
+		return result;
+	}
 	i = count_dig(n);
 	if (n < 0)
 	{
-		is_neg = 1;
 		result[0] = '-';
 		n = -n;
 	}
@@ -64,15 +67,26 @@ int	count_dig(int n)
 	i++;
 	return (i);
 }
-
+char *min_int_handle(char *result)
+{
+	result[0] = '-';
+	result[1] = '2';
+	result[2] = '1';
+	result[3] = '4';
+	result[4] = '7';
+	result[5] = '4';
+	result[6] = '8';
+	result[7] = '3';
+	result[8] = '6';
+	result[9] = '4';
+	result[10] = '8';
+}
 int	main(void)
 {
-	printf("%s", ft_itoa(-174714));
+	printf("%s", ft_itoa(-2147483648));
 }
 
 /*
-todo: 
-
-function itoa exceeds 25 lines
-min_int needs to be handled hardcoded with my approach
+todo:
+ itoa still exceeds 25 lines ffs
 */
