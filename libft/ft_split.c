@@ -3,35 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:33:57 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/04 18:59:26 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/06 15:36:30 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char	**ft_split(char *s, char c)
+char			**ft_split(char const *s, char c);
+static size_t	count_words(const char *str, char c);
+static char		*alloc_words(char const *str, char c, int j);
+
+char	**ft_split(char const *s, char c)
 {
+	char	**result;
+	int		i;
+	int		res_i;
+
+	i = 0;
+	res_i = 0;
+	result = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i])
+		{
+			result[res_i] = alloc_words(s, c, i);
+			if (!result[res_i])
+				return (NULL);
+			res_i++;
+			while (s[i] && s[i] != c)
+				i++;
+		}
+	}
+	result[res_i] = NULL;
+	return (result);
 }
-static int	count_words(const char *str, char delim)
+static size_t	count_words(const char *str, char c)
 {
-	int	i;
-	int	count;
+	size_t	i;
+	size_t	count;
 
 	i = 0;
 	count = 0;
 	while (str[i])
 	{
-		while (str[i] == delim)
+		while (str[i] == c)
 		{
 			i++;
 		}
 		if (str[i])
 		{
 			count++;
-			while (str[i] && str[i] != delim)
+			while (str[i] && str[i] != c)
 			{
 				i++;
 			}
@@ -39,4 +69,35 @@ static int	count_words(const char *str, char delim)
 	}
 	return (count);
 }
-static char	*alloc_words(char *s, char c)
+static char	*alloc_words(char const *str, char c, int j)
+{
+	int		i;
+	char	*word;
+	int		len;
+
+	i = 0;
+	len = 0;
+	while (str[j + len] && str[j + len] != c)
+		len++;
+	word = (char *)malloc((len + 1) * sizeof(char));
+	if (!word)
+		return (NULL);
+	while (i < len)
+	{
+		word[i] = str[j + i];
+		i++;
+	}
+	word[len] = '\0';
+	return (word);
+}
+int	main(void)
+{
+	char	**result;
+
+	result = ft_split("   hello my name   is   chara   ", ' ');
+	printf("%s", result[0]);
+	printf("%s", result[1]);
+	printf("%s", result[2]);
+	printf("%s", result[3]);
+	printf("%s", result[4]);
+}
