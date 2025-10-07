@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/07 01:32:04 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/07 02:00:39 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 int		count_dig(int n);
 char	*ft_itoa(int n);
-char *min_int_handle(char *result);
-
+char	*min_int_handle(char *result);
 
 char	*ft_itoa(int n)
 {
@@ -27,10 +26,7 @@ char	*ft_itoa(int n)
 	if (!result)
 		return (NULL);
 	if (n == -2147483648)
-	{
-		min_int_handle(result);
-		return result;
-	}
+		return (min_int_handle(result));
 	i = count_dig(n);
 	if (n < 0)
 	{
@@ -67,7 +63,7 @@ int	count_dig(int n)
 	i++;
 	return (i);
 }
-char *min_int_handle(char *result)
+char	*min_int_handle(char *result)
 {
 	result[0] = '-';
 	result[1] = '2';
@@ -80,11 +76,13 @@ char *min_int_handle(char *result)
 	result[8] = '6';
 	result[9] = '4';
 	result[10] = '8';
+	result[11] = '\0';
+	return (result);
 }
-int	main(void)
-{
-	printf("%s", ft_itoa(-2147483648));
-}
+// int	main(void)
+// {
+// 	printf("%s", ft_itoa(-2147483648));
+// }
 
 /*
 todo:
