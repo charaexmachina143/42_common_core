@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:33:57 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/06 15:36:30 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/08 13:24:55 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char	**ft_split(char const *s, char c)
 	result[res_i] = NULL;
 	return (result);
 }
+
 static size_t	count_words(const char *str, char c)
 {
 	size_t	i;
@@ -69,6 +70,7 @@ static size_t	count_words(const char *str, char c)
 	}
 	return (count);
 }
+
 static char	*alloc_words(char const *str, char c, int j)
 {
 	int		i;
@@ -90,6 +92,7 @@ static char	*alloc_words(char const *str, char c, int j)
 	word[len] = '\0';
 	return (word);
 }
+
 int	main(void)
 {
 	char	**result;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.itoa.c                                          :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 10:21:03 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/08 13:25:35 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	count_dig(int n)
 	i++;
 	return (i);
 }
+
 char	*min_int_handle(char *result)
 {
 	result[0] = '-';
@@ -79,6 +80,7 @@ char	*min_int_handle(char *result)
 	result[11] = '\0';
 	return (result);
 }
+
 // int	main(void)
 // {
 // 	printf("%s", ft_itoa(-2147483648));

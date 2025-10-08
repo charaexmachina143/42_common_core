@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:40:50 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 11:26:09 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/08 13:14:43 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *str, int search_str)
 	{
 		if (str[i] == (char)search_str)
 		{
-			return (&str[i]);
+			return ((char *)&str[i]);
 		}
 		i--;
 	}
