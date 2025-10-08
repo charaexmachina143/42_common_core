@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft.itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/07 02:00:39 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/08 10:21:03 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,3 @@ char	*min_int_handle(char *result)
 // {
 // 	printf("%s", ft_itoa(-2147483648));
 // }
-
-/*
-todo:
- itoa still exceeds 25 lines ffs
-*/
