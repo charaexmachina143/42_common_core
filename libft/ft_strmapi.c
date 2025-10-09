@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 10:26:01 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 13:19:44 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/09 13:28:42 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	str = ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (!s)
+	if (!str)
 		return (NULL);
 	while (s[i])
 	{

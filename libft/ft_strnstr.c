@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:11:42 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 13:26:39 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/09 12:21:11 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ char	*ft_strnstr(char *str, char *to_find, int n)
 	i = 0;
 	while (str[i] && i < n)
 	{
-		if (to_find[0] == '\0')
-			return (str);
-		while (str[i] == to_find[o])
+		while (str[i] == to_find[o] && i < n)
 		{
 			i++;
 			o++;
@@ -35,5 +33,9 @@ char	*ft_strnstr(char *str, char *to_find, int n)
 		i++;
 		o = 0;
 	}
-	return (0);
+	if (to_find[0] == '\0')
+		return (str);
+	if (n == 0)
+		return (NULL);
+	return (NULL);
 }

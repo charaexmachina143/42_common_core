@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:33:57 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 13:24:55 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/09 12:07:42 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,14 +93,14 @@ static char	*alloc_words(char const *str, char c, int j)
 	return (word);
 }
 
-int	main(void)
-{
-	char	**result;
+// int	main(void)
+// {
+// 	char	**result;
 
-	result = ft_split("   hello my name   is   chara   ", ' ');
-	printf("%s", result[0]);
-	printf("%s", result[1]);
-	printf("%s", result[2]);
-	printf("%s", result[3]);
-	printf("%s", result[4]);
-}
+// 	result = ft_split("   hello my name   is   chara   ", ' ');
+// 	printf("%s", result[0]);
+// 	printf("%s", result[1]);
+// 	printf("%s", result[2]);
+// 	printf("%s", result[3]);
+// 	printf("%s", result[4]);
+// }

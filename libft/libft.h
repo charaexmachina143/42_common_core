@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:23:55 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 17:19:20 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/09 13:07:24 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int		ft_toupper(int str);
 int		ft_tolower(int str);
 char	*ft_strchr(const char *str, int search_str);
 char	*ft_strrchr(const char *str, int search_str);
-int		ft_strncmp(char *s1, char *s2, unsigned int n);
+int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 void	*ft_memchr(const void *str, int search_str, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(char *str, char *to_find, int n);
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strdup(char *src);
 void	*ft_calloc(size_t num_elem, size_t size_elem);
