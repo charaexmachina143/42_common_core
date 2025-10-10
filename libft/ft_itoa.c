@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 13:25:35 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:39:22 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ char	*ft_itoa(int n)
 	int		i;
 	char	*result;
 
+	result = "";
+	if (n == -2147483648LL)
+		return (min_int_handle(result));
 	result = malloc(count_dig(n) + 1);
 	if (!result)
 		return (NULL);
-	if (n == -2147483648)
-		return (min_int_handle(result));
 	i = count_dig(n);
 	if (n < 0)
 	{
@@ -35,7 +36,7 @@ char	*ft_itoa(int n)
 	}
 	result[i] = '\0';
 	i--;
-	while (n > 10)
+	while (n > 9)
 	{
 		result[i] = n % 10 + 48;
 		n = n / 10;
@@ -55,7 +56,7 @@ int	count_dig(int n)
 		n = -n;
 		i++;
 	}
-	while (n > 10)
+	while (n > 9)
 	{
 		n = n / 10;
 		i++;
@@ -66,6 +67,7 @@ int	count_dig(int n)
 
 char	*min_int_handle(char *result)
 {
+	result = malloc(12);
 	result[0] = '-';
 	result[1] = '2';
 	result[2] = '1';
@@ -83,5 +85,5 @@ char	*min_int_handle(char *result)
 
 // int	main(void)
 // {
-// 	printf("%s", ft_itoa(-2147483648));
+// 	printf("%s", ft_itoa(-2147483648LL));
 // }
