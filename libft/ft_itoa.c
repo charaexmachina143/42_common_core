@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/10 13:39:22 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/10 20:40:24 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int	count_dig(int n)
 char	*min_int_handle(char *result)
 {
 	result = malloc(12);
+	if (!result)
+		return (NULL);
 	result[0] = '-';
 	result[1] = '2';
 	result[2] = '1';
