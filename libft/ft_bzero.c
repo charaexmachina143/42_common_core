@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:53:42 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:36:21 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:45:47 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 void	ft_bzero(void *s, size_t n)
 {
 	if (!s)
-		return (NULL);
+		return;
 	ft_memset(s, 0, n);
 }
