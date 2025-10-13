@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/02 10:40:50 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/09 10:22:20 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
+char	*ft_strrchr(const char *str, int search_str)
+{
+	int	i;
 
-
-
-
-
-
-
-
-#endif
-
+	i = ft_strlen(str);
+	while (i >= 0)
+	{
+		if (str[i] == (char)search_str)
+		{
+			return ((char *)&str[i]);
+		}
+		i--;
+	}
+	return (NULL);
+}

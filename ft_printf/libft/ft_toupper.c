@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/02 10:03:39 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/08 17:18:02 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
-
-
-
-
-
-
-
-
-#endif
-
+int	ft_toupper(int str)
+{
+	if (str >= 97 && str <= 122)
+		str = str - 32;
+	return (str);
+}

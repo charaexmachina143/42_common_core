@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/01 13:04:01 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/08 16:02:09 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	size_t	i;
 
-
-
-
-
-
-
-
-#endif
-
+	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
+	if (dest > src)
+	{
+		i = n;
+		while (i > 0)
+		{
+			i--;
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+		}
+	}
+	else
+	{
+		while (i < n)
+		{
+			*(unsigned char *)(dest + i) = *(unsigned char *)(src + i);
+			i++;
+		}
+	}
+	return ((void *)dest);
+}

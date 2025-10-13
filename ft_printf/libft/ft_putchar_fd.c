@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/10 12:30:56 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/10 12:32:16 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
-
-
-
-
-
-
-
-
-#endif
-
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}

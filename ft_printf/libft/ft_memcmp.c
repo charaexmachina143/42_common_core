@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/02 11:15:28 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/02 13:03:35 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
+#include "libft.h"
 
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	unsigned int	i;
+	int				c;
 
-
-
-
-
-
-
-#endif
-
+	i = 0;
+	c = 0;
+	while (i < n)
+	{
+		if (*(unsigned char *)(s1 + i) != *(unsigned char *)(s2 + i))
+		{
+			c = *(unsigned char *)(s1 + i) - *(unsigned char *)(s2 + i);
+			return (c);
+		}
+		i++;
+	}
+	return (c);
+}

@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/09/30 13:59:05 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/08 14:12:43 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
+void	*ft_memcpy(void *s1, const void *s2, size_t n)
+{
+	size_t	i;
 
-
-
-
-
-
-
-
-#endif
-
+	i = 0;
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	while (i < n)
+	{
+		*(unsigned char *)(s1 + i) = *(unsigned char *)(s2 + i);
+		i++;
+	}
+	return (s1);
+}

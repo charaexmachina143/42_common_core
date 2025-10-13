@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:20 by doberste         ###   ########.fr       */
+/*   Created: 2025/10/02 13:19:17 by doberste          #+#    #+#             */
+/*   Updated: 2025/10/09 13:17:18 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PRINTF_H
-
-# define PRINTF_H
-#include <stdarg.h>
 #include "libft.h"
 
+void	*ft_calloc(size_t num_elem, size_t size_elem)
+{
+	void	*array;
 
-
-
-
-
-
-
-
-#endif
-
+	if (num_elem == 0 || size_elem == 0)
+	{
+		array = malloc(0);
+		return (array);
+	}
+	if (num_elem * size_elem > __SIZE_MAX__)
+		return (NULL);
+	array = malloc(num_elem * size_elem);
+	if (!array)
+		return (NULL);
+	ft_bzero(array, num_elem * size_elem);
+	return (array);
+}
