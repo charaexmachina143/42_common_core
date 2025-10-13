@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 13:59:05 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 14:12:43 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:36:21 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (s1 == NULL && s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
 	while (i < n)
 	{

@@ -6,14 +6,14 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 09:40:42 by doberste          #+#    #+#             */
-/*   Updated: 2025/09/30 12:50:01 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:25:00 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-void	*ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	mem;
 	size_t			i;
@@ -22,16 +22,16 @@ void	*ft_memset(void *str, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		*(unsigned char *)(str + i) = mem;
+		*(unsigned char *)(s + i) = mem;
 		i++;
 	}
-	return (str);
+	return (s);
 }
 
 // int main()
 // {
-//     char str[] = "chara";
-//     *str = *(unsigned char *)ft_memset(&str, 90, 3);
+//     char s[] = "chara";
+//     *s = *(unsigned char *)ft_memset(&s, 90, 3);
 
-//     printf("%s", str);
+//     printf("%s", s);
 // }

@@ -6,18 +6,18 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:38:01 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/10 12:48:42 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:11:59 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd);
-void	ft_revstr(char *str, int size);
+void		ft_putnbr_fd(int nb, int fd);
+static void	ft_revstr(char *str, int size);
 
 void	ft_putnbr_fd(int nb, int fd)
 {
-	char			buff[100];
+	char			buff[12];
 	int				i;
 	unsigned int	n;
 
@@ -41,7 +41,7 @@ void	ft_putnbr_fd(int nb, int fd)
 	write(fd, buff, i);
 }
 
-void	ft_revstr(char *str, int size)
+static void	ft_revstr(char *str, int size)
 {
 	int	tmp;
 	int	i;

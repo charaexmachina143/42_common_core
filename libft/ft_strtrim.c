@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 10:46:45 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/10 14:05:57 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:36:21 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*new_str;
 	int		index1;
 
+	if (!s1 || !set)
+		return (NULL);
 	index1 = index_front(s1, set);
 	if ((size_t)index1 == ft_strlen(s1))
 		return (ft_strdup(""));

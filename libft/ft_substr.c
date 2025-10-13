@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 09:49:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/10 14:15:30 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:38:58 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	i = start;
 	sub_i = 0;
+	if (!s || !start)
+		return (NULL);
 	if (s[0] == '\0' || ft_strlen(s) <= start)
 		return (ft_strdup(""));
 	if (ft_strlen(s + start) < len)

@@ -6,11 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:09:03 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/02 10:11:57 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 15:03:14 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//#include "libft.h"
 
 int	ft_isalpha(int c)
 {

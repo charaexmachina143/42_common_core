@@ -6,15 +6,15 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:18:36 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/08 17:20:30 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:36:21 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_tolower(int str)
+int	ft_tolower(int c)
 {
-	if (str >= 65 && str <= 90)
-		str = str + 32;
-	return (str);
+	if (c >= 65 && c <= 90)
+		c = c + 32;
+	return (c);
 }
