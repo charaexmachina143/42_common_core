@@ -6,17 +6,18 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 10:46:45 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 13:11:21 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 //#include <stdio.h>
 
 char		*ft_strtrim(char const *s1, char const *set);
 static int	index_front(const char *s1, char const *set);
 static int	index_end(const char *s1, const char *set);
-char		*ft_real_string(const char *new_str, const char *set);
+static char	*ft_real_string(const char *new_str, const char *set);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -78,7 +79,7 @@ static int	index_end(const char *s1, const char *set)
 	return (i);
 }
 
-char	*ft_real_string(const char *s1, const char *set)
+static char	*ft_real_string(const char *s1, const char *set)
 {
 	char	*new_str;
 	int		new_i;
