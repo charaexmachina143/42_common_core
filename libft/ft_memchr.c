@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 10:49:53 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:36:21 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:02:59 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memchr(const void *str, int search_str, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!str)
-		return (NULL);
 	while (i < n)
 	{
 		if (*(unsigned char *)(str + i) == (unsigned char)search_str)

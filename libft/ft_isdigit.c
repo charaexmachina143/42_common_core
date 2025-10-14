@@ -6,11 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:42:25 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 15:04:33 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {

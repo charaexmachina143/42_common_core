@@ -6,12 +6,12 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:09:00 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:38:58 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+//#include <stdlib.h>
 
 char	*ft_strdup(char *s)
 {
@@ -19,8 +19,6 @@ char	*ft_strdup(char *s)
 	int		i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	dest = malloc(ft_strlen(s) + 1);
 	if (!dest)
 		return (NULL);

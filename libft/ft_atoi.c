@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:17:58 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:40:14 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 10:57:24 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ static int	ft_isspace(int c)
 }
 // int	main(void)
 // {
-// 	printf(ft_atoi(NULL));
+//		printf("%d", ft_atoi(NULL));
 // }

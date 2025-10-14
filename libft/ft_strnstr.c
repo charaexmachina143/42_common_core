@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:11:42 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:38:58 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:02:11 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strnstr(char *big, char *little, size_t len)
 
 	o = 0;
 	i = 0;
-	if (!big || !little)
-		return (NULL);
 	if (little[0] == '\0')
 		return (big);
 	while (big[i] && i < len)

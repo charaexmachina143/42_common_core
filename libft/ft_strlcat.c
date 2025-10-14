@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:47:49 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:27:51 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/14 11:07:13 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 	dst[i + o] = '\0';
 	return (src_len + dest_len);
 }
+// int main()
+// {
+// 	printf("%zu", ft_strlcat(NULL, NULL, 1));
+// }
