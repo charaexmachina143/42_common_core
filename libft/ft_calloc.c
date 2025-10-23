@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:19:17 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/20 14:45:12 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/23 11:58:45 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
-	if (nmemb * size > __SIZE_MAX__)
+	if (nmemb * size > 2147483647)
 		return (NULL);
 	array = malloc(nmemb * size);
 	if (!array)
