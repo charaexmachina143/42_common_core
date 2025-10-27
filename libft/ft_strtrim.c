@@ -6,13 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 10:46:45 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 13:11:21 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 12:04:07 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-//#include <stdio.h>
 
 char		*ft_strtrim(char const *s1, char const *set);
 static int	index_front(const char *s1, char const *set);

@@ -6,11 +6,9 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:17:58 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 10:57:24 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:58:35 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static int	ft_isspace(int c);
 int			ft_atoi(const char *nptr);

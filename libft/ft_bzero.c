@@ -6,12 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:53:42 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:58:35 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 void	ft_bzero(void *s, size_t n)
 {

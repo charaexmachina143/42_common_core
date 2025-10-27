@@ -6,11 +6,9 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:22:26 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:58:35 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

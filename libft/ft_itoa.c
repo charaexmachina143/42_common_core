@@ -6,12 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:56:50 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int		count_dig(int n);
 char	*ft_itoa(int n);

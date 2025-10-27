@@ -6,12 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:09:00 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 12:04:07 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdlib.h>
 
 char	*ft_strdup(char *s)
 {

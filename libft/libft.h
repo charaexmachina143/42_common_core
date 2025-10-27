@@ -6,14 +6,13 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 13:23:55 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 16:25:00 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:56:50 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 
 # define LIBFT_H
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 

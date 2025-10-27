@@ -6,12 +6,11 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:33:57 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:25:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 12:01:27 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 char			**ft_split(char const *s, char c);
 static size_t	count_words(const char *str, char c);
