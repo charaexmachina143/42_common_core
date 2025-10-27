@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 14:32:18 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/27 11:56:50 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/27 12:52:54 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_itoa(int n)
 	char	*result;
 
 	result = "";
-	if (n == -2147483648LL)
+	if (n == -2147483648)
 		return (min_int_handle(result));
 	result = malloc(count_dig(n) + 1);
 	if (!result)
