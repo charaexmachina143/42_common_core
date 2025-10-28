@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 09:49:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/14 11:02:40 by doberste         ###   ########.fr       */
+/*   Updated: 2025/10/28 13:24:17 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = malloc(len * sizeof(char) + 1);
 	if (!substr)
 		return (NULL);
-	while (s[i])
+	while (s[i] && (size_t)i < len)
 	{
 		substr[sub_i] = s[i];
 		i++;
@@ -36,3 +36,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[len] = '\0';
 	return (substr);
 }
+// #include "stdio.h"
+// int main()
+// {
+// 	char *result = ft_substr("hello world", 2, 3);
+// 	free (result);
+// }
