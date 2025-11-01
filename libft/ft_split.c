@@ -6,18 +6,26 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 18:33:57 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/27 12:01:27 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/01 11:10:02 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			**ft_split(char const *s, char c);
+static char		**ft_split_fnc(char const *s, char c);
 static size_t	count_words(const char *str, char c);
 static char		*alloc_words(char const *str, char c, int j);
 static void		free_all(char **result, int i);
 
 char	**ft_split(char const *s, char c)
+{
+	if (!s)
+		return (NULL);
+	else
+		return (ft_split_fnc(s, c));
+}
+
+static char	**ft_split_fnc(char const *s, char c)
 {
 	char	**result;
 	int		i;
@@ -100,14 +108,15 @@ static void	free_all(char **result, int i)
 	free(result);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char	**result;
 
-// 	result = ft_split("   hello my name   is   chara   ", ' ');
-// 	printf("%s", result[0]);
-// 	printf("%s", result[1]);
-// 	printf("%s", result[2]);
-// 	printf("%s", result[3]);
-// 	printf("%s", result[4]);
+// 	result = ft_split(NULL, ' ');
+// 	// printf("%s", result[0]);
+// 	// printf("%s", result[1]);
+// 	// printf("%s", result[2]);
+// 	// printf("%s", result[3]);
+// 	// printf("%s", result[4]);
 // }
