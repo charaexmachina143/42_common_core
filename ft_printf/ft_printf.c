@@ -6,11 +6,13 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:47:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/13 14:40:18 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/10 15:37:44 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
+int	ft_printf(const char *format, ...);
+static void format_call(const char suffix, va_list args);
 
 int	ft_printf(const char *format, ...)
 {
@@ -24,7 +26,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if(format[i] != '%')
 		{
-			write(1, format[i], 1);
+			write(1, &format[i], 1);
 			i++;
 		} 
 		else
@@ -37,11 +39,14 @@ int	ft_printf(const char *format, ...)
 
 static void format_call(const char suffix, va_list args)
 {
-	if(suffix == "s")
-	{
-		char *s = va_arg(args, char *);
-		ft_putstr_fd(s, 1);
-	}
-	if(suffix == "c")
-		
+	if(suffix == 's')
+		ft_putstr_fd((va_arg(args, char *)), 1);
+	if(suffix == 'c')
+		ft_putchar_fd((va_arg(args, int)), 1);
+	if(suffix == 'i' || suffix == 'd')
+		ft_putnbr_fd((va_arg(args, int)), 1);
+	if(suffix == '%')	
+		write(1, "%", 1);
+	if(suffix == 'u')
+		ft_putnbr_unsigned_fd((va_arg(args, unsigned int)), 1);
 }
