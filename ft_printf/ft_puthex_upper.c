@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:00:21 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 13:56:09 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:16:50 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_puthex_upper_fd(long nb, int fd)
 	i = 0;
 	n = (unsigned int)nb;
 	if (n == 0)
-		write(fd, "0", 1);
+		return(write(fd, "0", 1));
 	while (n > 0)
 	{
 		buff[i] = str[n % 16];

@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 11:20:55 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 16:57:53 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:11:00 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 int main()
 {
-    printf("%s", "\0");
+    int result = printf("%i", NULL);
+    printf("%i", result);
 }

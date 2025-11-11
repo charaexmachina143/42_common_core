@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:47:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 16:59:00 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:17:17 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,11 @@ static int	format_call(const char suffix, va_list args)
 	return (count);
 }
 
-#include <stdio.h>
-// #include "ft_printf.h"
+// #include <stdio.h>
+// // #include "ft_printf.h"
 
-int main()
-{
-    int result = ft_printf("%s", NULL);
-	printf("%i", result);
-
-}
+// int main()
+// {
+//     int result = ft_printf("%i", NULL);
+// 	printf("%i", result);
+// }
