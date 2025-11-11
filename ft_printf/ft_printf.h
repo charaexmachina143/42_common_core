@@ -6,13 +6,13 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:41:10 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:20:20 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:24:14 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-# define PRINTF_H
 # include "libft/libft.h"
 # include <stdarg.h>
 

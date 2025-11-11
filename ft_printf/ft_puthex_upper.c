@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:00:21 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:19:31 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:21:06 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ int	ft_puthex_upper_fd(long nb, int fd)
 
 static void	ft_revstr(char *str, int size)
 {
-	int tmp;
-	int i;
+	int	tmp;
+	int	i;
 
 	i = 0;
 	while (i < size / 2)
