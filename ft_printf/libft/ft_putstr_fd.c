@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:33:11 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 12:34:34 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 16:59:29 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_putstr_fd(char *s, int fd)
 {
+	if (!s)
+		return (write(1, "(null)", 6));
 	return (write(fd, s, ft_strlen(s)));
 }
