@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puthex.c                                        :+:      :+:    :+:   */
+/*   ft_puthex_upper.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 15:10:37 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 13:54:47 by doberste         ###   ########.fr       */
+/*   Created: 2025/11/11 12:00:21 by doberste          #+#    #+#             */
+/*   Updated: 2025/11/11 13:56:09 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_puthex_fd(long nb, int fd);
+int		ft_puthex_upper_fd(long nb, int fd);
 static void	ft_revstr(char *str, int size);
 
-int	ft_puthex_fd(long nb, int fd)
+int	ft_puthex_upper_fd(long nb, int fd)
 {
 	char			buff[100];
 	int				i;
 	unsigned int	n;
 	char			*str;
 
-	str = "0123456789abcdef";
+	str = "0123456789ABCDEF";
 	i = 0;
 	n = (unsigned int)nb;
 	if (n == 0)

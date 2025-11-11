@@ -6,26 +6,29 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:38:01 by doberste          #+#    #+#             */
-/*   Updated: 2025/10/10 12:48:42 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 14:05:50 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int nb, int fd);
-void	ft_revstr(char *str, int size);
+int			ft_putnbr_fd(int nb, int fd);
+static void	ft_revstr(char *str, int size);
 
-void	ft_putnbr_fd(int nb, int fd)
+int	ft_putnbr_fd(int nb, int fd)
 {
 	char			buff[100];
 	int				i;
 	unsigned int	n;
+	int				o;
 
+	o = 0;
 	i = 0;
 	if (nb < 0)
 	{
 		write(fd, "-", 1);
 		n = (unsigned int)(-((long)nb));
+		o = 1;
 	}
 	else
 		n = (unsigned int)nb;
@@ -38,10 +41,10 @@ void	ft_putnbr_fd(int nb, int fd)
 		i++;
 	}
 	ft_revstr(buff, i);
-	write(fd, buff, i);
+	return (write(fd, buff, i) + o);
 }
 
-void	ft_revstr(char *str, int size)
+static void	ft_revstr(char *str, int size)
 {
 	int	tmp;
 	int	i;
