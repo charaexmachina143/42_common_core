@@ -6,13 +6,13 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:00:21 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:16:50 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:19:31 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_puthex_upper_fd(long nb, int fd);
+int			ft_puthex_upper_fd(long nb, int fd);
 static void	ft_revstr(char *str, int size);
 
 int	ft_puthex_upper_fd(long nb, int fd)
@@ -26,7 +26,7 @@ int	ft_puthex_upper_fd(long nb, int fd)
 	i = 0;
 	n = (unsigned int)nb;
 	if (n == 0)
-		return(write(fd, "0", 1));
+		return (write(fd, "0", 1));
 	while (n > 0)
 	{
 		buff[i] = str[n % 16];

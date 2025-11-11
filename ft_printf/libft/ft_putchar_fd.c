@@ -6,15 +6,15 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:30:56 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:14:48 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:19:50 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int 	ft_putchar_fd(char c, int fd)
+int	ft_putchar_fd(char c, int fd)
 {
-	if(!c)
-		return(write(1, "(null)", 6)); 
-	return(write(fd, &c, 1));
+	if (!c)
+		return (write(1, "(null)", 6));
+	return (write(fd, &c, 1));
 }

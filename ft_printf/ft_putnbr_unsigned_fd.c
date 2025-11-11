@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 14:58:30 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:15:49 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/11 17:19:18 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putnbr_unsigned_fd(long nb, int fd)
 	i = 0;
 	n = (unsigned int)nb;
 	if (n == 0)
-		return(write(fd, "0", 1));
+		return (write(fd, "0", 1));
 	while (n > 0)
 	{
 		buff[i] = (n % 10) + '0';
