@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:47:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:19:37 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/13 12:32:03 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,7 @@ static int	format_call(const char suffix, va_list args)
 	if (suffix == 'X')
 		count = ft_puthex_upper_fd(va_arg(args, unsigned int), 1);
 	if (suffix == 'p')
-	{
-		write(1, "0x", 2);
-		count = ft_puthex_fd(va_arg(args, long), 1) + 2;
-	}
+		count = ft_putptr_fd(va_arg(args, unsigned long int), 1);
 	return (count);
 }
 
@@ -73,6 +70,10 @@ static int	format_call(const char suffix, va_list args)
 
 // int main()
 // {
-//     int result = ft_printf("%i", NULL);
-// 	printf("%i", result);
+//     char *str = malloc(5);
+
+// 	int result = ft_printf("%p", &str);
+// 	printf("%i\n", result);
+// 	int result2 = printf("%p", &str);
+// 	printf("%i\n", result2);
 // }
