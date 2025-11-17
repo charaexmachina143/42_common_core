@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:47:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/13 12:32:03 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/14 16:31:51 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,55 +14,67 @@
 
 int			ft_printf(const char *format, ...);
 static int	format_call(const char suffix, va_list args);
+static int	process_format(const char *format, int *i, va_list args);
+
+static int	process_format(const char *format, int *i, va_list args)
+{
+	int	temp;
+
+	if (format[*i] == '%' && format[*i + 1] == '\0')
+		return (-1);
+	if (format[*i] != '%')
+	{
+		write(1, &format[*i], 1);
+		return (1);
+	}
+	temp = format_call(format[*i + 1], args);
+	*i += 1;
+	return (temp);
+}
 
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	int		i;
-	int		o;
+	int		count;
+	int		temp;
 
 	va_start(args, format);
-	va_end(args);
 	i = 0;
-	o = 0;
+	count = 0;
 	while (format[i])
 	{
-		if (format[i] != '%')
-		{
-			write(1, &format[i], 1);
-			i++;
-		}
-		else
-		{
-			o = format_call(format[i + 1], args);
-			i = i + 2;
-		}
+		temp = process_format(format, &i, args);
+		if (temp == -1)
+			return (va_end(args), -1);
+		count = count + temp;
+		i++;
 	}
-	return (o);
+	va_end(args);
+	return (count);
 }
 
 static int	format_call(const char suffix, va_list args)
 {
-	int	count;
-
-	count = 0;
 	if (suffix == 's')
-		count = ft_putstr_fd((va_arg(args, char *)), 1);
+		return (ft_putstr_fd((va_arg(args, char *)), 1));
 	if (suffix == 'c')
-		count = ft_putchar_fd((va_arg(args, int)), 1);
+		return (ft_putchar_fd((va_arg(args, int)), 1));
 	if (suffix == 'i' || suffix == 'd')
-		count = ft_putnbr_fd((va_arg(args, int)), 1);
+		return (ft_putnbr_fd((va_arg(args, int)), 1));
 	if (suffix == '%')
-		count = write(1, "%", 1);
+		return (write(1, "%", 1));
 	if (suffix == 'u')
-		count = ft_putnbr_unsigned_fd((va_arg(args, unsigned int)), 1);
+		return (ft_putnbr_unsigned_fd((va_arg(args, unsigned int)), 1));
 	if (suffix == 'x')
-		count = ft_puthex_fd(va_arg(args, unsigned int), 1);
+		return (ft_puthex_fd(va_arg(args, unsigned int), 1));
 	if (suffix == 'X')
-		count = ft_puthex_upper_fd(va_arg(args, unsigned int), 1);
+		return (ft_puthex_upper_fd(va_arg(args, unsigned int), 1));
 	if (suffix == 'p')
-		count = ft_putptr_fd(va_arg(args, unsigned long int), 1);
-	return (count);
+		return (ft_putptr_fd(va_arg(args, unsigned long int), 1));
+	write(1, "%", 1);
+	write(1, &suffix, 1);
+	return (2);
 }
 
 // #include <stdio.h>
@@ -72,8 +84,8 @@ static int	format_call(const char suffix, va_list args)
 // {
 //     char *str = malloc(5);
 
-// 	int result = ft_printf("%p", &str);
+// 	int result = ft_printf("%");
 // 	printf("%i\n", result);
-// 	int result2 = printf("%p", &str);
+// 	int result2 = printf("%");
 // 	printf("%i\n", result2);
 // }

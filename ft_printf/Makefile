@@ -3,6 +3,7 @@ NAME = libftprintf.a
 CFLAGS = -Wall -Werror -Wextra #-g -c
 
 SRC = ft_printf.c ft_puthex.c ft_putnbr_unsigned_fd.c ft_puthex_upper.c ft_putptr.c
+
 HEADER = ft_printf.h
 
 OBJECTS = $(SRC:.c=.o)

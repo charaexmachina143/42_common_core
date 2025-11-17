@@ -28,7 +28,7 @@ int	ft_putptr_fd(unsigned long int nb, int fd)
 	if (n == 0)
 		return (write(fd, "(nil)", 5));
 	else
-		write(1, "0x", 2);
+		write(fd, "0x", 2);
 	while (n > 0)
 	{
 		buff[i] = str[n % 16];

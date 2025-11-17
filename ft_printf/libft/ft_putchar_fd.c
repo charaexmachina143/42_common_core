@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 12:30:56 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/11 17:19:50 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/14 15:56:54 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,5 @@
 
 int	ft_putchar_fd(char c, int fd)
 {
-	if (!c)
-		return (write(1, "(null)", 6));
 	return (write(fd, &c, 1));
 }
