@@ -3,34 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: doberste <doberste@student.42vienna.com    +#+  +:+       +#+        */
+/*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:47:24 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/14 16:31:51 by doberste         ###   ########.fr       */
+/*   Updated: 2025/11/24 08:46:56 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
 int			ft_printf(const char *format, ...);
-static int	format_call(const char suffix, va_list args);
 static int	process_format(const char *format, int *i, va_list args);
-
-static int	process_format(const char *format, int *i, va_list args)
-{
-	int	temp;
-
-	if (format[*i] == '%' && format[*i + 1] == '\0')
-		return (-1);
-	if (format[*i] != '%')
-	{
-		write(1, &format[*i], 1);
-		return (1);
-	}
-	temp = format_call(format[*i + 1], args);
-	*i += 1;
-	return (temp);
-}
+static int	format_call(const char suffix, va_list args);
 
 int	ft_printf(const char *format, ...)
 {
@@ -52,6 +36,22 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(args);
 	return (count);
+}
+
+static int	process_format(const char *format, int *i, va_list args)
+{
+	int	temp;
+
+	if (format[*i] == '%' && format[*i + 1] == '\0')
+		return (-1);
+	if (format[*i] != '%')
+	{
+		write(1, &format[*i], 1);
+		return (1);
+	}
+	temp = format_call(format[*i + 1], args);
+	*i++;
+	return (temp);
 }
 
 static int	format_call(const char suffix, va_list args)
@@ -82,7 +82,7 @@ static int	format_call(const char suffix, va_list args)
 
 // int main()
 // {
-//     char *str = malloc(5);
+// 	char *str = malloc(5);
 
 // 	int result = ft_printf("%");
 // 	printf("%i\n", result);
