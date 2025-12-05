@@ -6,7 +6,7 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:54:43 by doberste          #+#    #+#             */
-/*   Updated: 2025/11/28 15:35:16 by doberste         ###   ########.fr       */
+/*   Updated: 2025/12/05 10:02:00 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ size_t	ft_strlen(const char *s)
 		a = a + 1;
 	return (a);
 }
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*substr;
@@ -45,6 +46,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[len] = '\0';
 	return (substr);
 }
+
 char	*ft_strdup(char *s)
 {
 	char	*dest;
@@ -62,6 +64,7 @@ char	*ft_strdup(char *s)
 	dest[i] = '\0';
 	return (dest);
 }
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new_str;
@@ -89,6 +92,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_str[i] = 0;
 	return (new_str);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

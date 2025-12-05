@@ -6,21 +6,23 @@
 /*   By: doberste <doberste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 09:54:06 by doberste          #+#    #+#             */
-/*   Updated: 2025/12/05 09:59:13 by doberste         ###   ########.fr       */
+/*   Updated: 2025/12/05 14:05:34 by doberste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 char		*get_next_line(int fd);
-static char	*_fill_line_buffer(int fd, char *total_line, char *buffer);
+static char	*fill_line(int fd, char *total_line, char *buffer);
+static char	*set_line(char *line_buff);
 
 char	*get_next_line(int fd)
 {
-	char	*buff;
-	char	*line;
-	char	*total_line;
+	char		*buff;
+	char		*line;
+	static char	*total_line;
 
+	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
 		free(buff);
@@ -29,7 +31,6 @@ char	*get_next_line(int fd)
 		buff = NULL;
 		return (NULL);
 	}
-	buff = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buff)
 		return (NULL);
 	line = fill_line(fd, total_line, buff);
@@ -40,6 +41,7 @@ char	*get_next_line(int fd)
 	total_line = set_line(line);
 	return (line);
 }
+
 static char	*fill_line(int fd, char *total_line, char *buff)
 {
 	ssize_t	buff_read;
@@ -58,15 +60,15 @@ static char	*fill_line(int fd, char *total_line, char *buff)
 			break ;
 		buff[buff_read] = 0;
 		if (!total_line)
-			ft_strdup("");
+			total_line = ft_strdup("");
 		temp = total_line;
 		total_line = ft_strjoin(temp, buff);
 		free(temp);
 		temp = NULL;
 		if (ft_strchr(buff, '\n'))
 			break ;
-		return (total_line);
 	}
+	return (total_line);
 }
 
 static char	*set_line(char *line_buff)
@@ -75,12 +77,14 @@ static char	*set_line(char *line_buff)
 	ssize_t	i;
 
 	i = 0;
-	while (line_buff[i] != '\n' && line_buff != '\0')
+	total_line = NULL;
+	while (line_buff[i] != '\n' && line_buff[i] != '\0')
 		i++;
-	if (line_buff[i] == 0 || line_buff[1] == 0)
+	if (line_buff[i] == 0)
 		return (NULL);
-	total_line = ft_substr(line_buff, i + 1, ft_strlen(line_buff) - i);
-	if (*total_line == 0)
+	if (line_buff[i + 1] != 0)
+		total_line = ft_substr(line_buff, i + 1, ft_strlen(line_buff) - i);
+	else
 	{
 		free(total_line);
 		total_line = NULL;
@@ -88,13 +92,31 @@ static char	*set_line(char *line_buff)
 	line_buff[i + 1] = 0;
 	return (total_line);
 }
-int	main(int argc, char **argv)
-{
-	int	fd;
 
-	fd = open(argv[1], O_RDONLY);
-	if (argc > 1 || fd < 0)
-		return (-1);
-	get_next_line(fd);
-	return (0);
-}
+//#include <stdio.h>
+
+// int    main(int argc, char **argv)
+// {
+//     if (argc < 1)
+//         return (1);
+//     int fd = open(argv[1], O_RDONLY);
+//     char *line;
+
+//     //printf("Buffer Size: %d\n", BUFFER_SIZE);
+//     if (fd < 0)
+//         return (1);
+//     while ((line = get_next_line(fd)))
+//     {
+//         printf("%s", line);
+//         free(line);
+//     }
+//     close(fd);
+//     return (0);
+// }
+//⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⢠⣤⡀⣾⣿⣿⠀⣤⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⢿⣿⡇⠘⠛⠁⢸⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⠈⣉⣤⣾⣿⣿⡆⠉⣴⣶⣶⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⣾⣿⣿⣿⣿⣿⣿⡀⠻⠟⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⠙⠛⠻⢿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⠀⠀⠀⠀⠈⠙⠋⠁⠀⠀⠀
