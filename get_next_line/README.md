@@ -21,7 +21,9 @@ This algorithm works by reading data from a file little by little while keeping 
 Each time the function is called, it first checks whether the stored buffer already contains a newline character. If it does, the function extracts everything up to and including that newline and returns it as the next line. Any remaining characters after the newline stay in the buffer for the next call.
 If no newline is found, the function reads more data from the file descriptor using read() into a temporary buffer of size BUFFER_SIZE. This new data is then appended to the existing buffer. The function repeats this process until it either finds a newline or reaches the end of the file.
 When the end of the file is reached, the function checks whether there is still data left in the buffer. If there is, that data is returned as the final line. If the buffer is empty, the function returns NULL, indicating that there is nothing more to read.
-This approach is effective because it reduces the number of system calls by reading data in chunks rather than one character at a time, while still correctly returning one line per function call. Using a static buffer is essential, as it allows the function to maintain its state between calls, which is a key requirement of the project. With proper memory management, this method avoids leaks and ensures reliable behavior in all cases.
+This approach is effective because it reduces the number of system calls by reading data in chunks rather than one character at a time, while still correctly returning one line per function call. Using a static buffer is essential, as it allows the function to maintain its state between calls, which is a key requirement of the project.
+
+The function needs to be executed until the end of file is reached, else it will cause a memory leak, the fix for that is not neccesary in this project according to the norms state on undefined behavior.
 
 Resources
 
